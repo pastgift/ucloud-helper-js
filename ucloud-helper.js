@@ -77,7 +77,6 @@ UCloudHelper.prototype.call = function(params, callback) {
   var queryString = self.getQueryString(params);
 
   var url = 'https://api.ucloud.cn?' + queryString;
-  console.log(url)
   var requestOptions = {
     forever: true,
     timeout: 10 * 1000,
@@ -86,7 +85,17 @@ UCloudHelper.prototype.call = function(params, callback) {
   };
 
   request(requestOptions, function(err, res, body) {
-    return callback(err, body);
+    if ('string' === typeof body) {
+      body = JSON.parse(body);
+    }
+
+    if (err) {
+      return callback(err);
+    } else if (res.statusCode >= 400 || body.RetCode > 0) {
+      return callback(body);
+    } else {
+      return callback(null, body);
+    }
   });
 };
 

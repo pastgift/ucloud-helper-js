@@ -9,8 +9,8 @@ var params = {
   Action: 'GetRegion',
 };
 helper.call(params, function(err, apiRes) {
-  console.log(err);
-  console.log(JSON.stringify(JSON.parse(apiRes), null, '  '))
+  console.log('err: ', err);
+  console.log('apiRes: ', apiRes ? JSON.stringify(apiRes, null, '  ') : null);
 
   process.exit();
 });
