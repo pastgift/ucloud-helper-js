@@ -1,0 +1,24 @@
+{
+  "name": "ucloud-helper",
+  "version": "0.1",
+  "main": "ucloud-helper.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pastgift/ucloud-helper-js"
+  },
+  "keywords": [
+    "ucloud"
+  ],
+  "author": {
+    "name": "Yiling Zhou",
+    "email": "pastgift@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pastgift/ucloud-helper-js/issues"
+  },
+  "homepage": "https://github.com/pastgift/ucloud-helper-js",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
