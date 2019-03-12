@@ -60,7 +60,7 @@ UCloudHelper.prototype.getQueryString = function(params) {
 
   var queryStringParts = [];
   keys.forEach(function(k) {
-    queryStringParts.push(encodeURI(k) + '=' + encodeURI(params[k]));
+    queryStringParts.push(encodeURIComponent(k) + '=' + encodeURIComponent(params[k]));
   });
 
   var queryString = queryStringParts.join('&');
